@@ -7,7 +7,7 @@ public class Player_Movement : MonoBehaviour
     float movementspeed = 0.1f;
     float rotationspeed = 1;
     float jumpForce = 5;
-    int maxjumps = 20;
+    int maxjumps = 5;
 
 
     int hasjump;
@@ -60,6 +60,7 @@ public class Player_Movement : MonoBehaviour
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
             movementspeed += 0.05f;
+            maxjumps += 5;
         }
         if (col.gameObject.name == "Restart2")
         {
