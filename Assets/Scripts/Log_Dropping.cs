@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Log_Dropping : MonoBehaviour
 {
-    public Transform spawnear;
-    public GameObject log;
-    GameObject clone;
+    public Transform spawner;
+    public GameObject logs;
+    GameObject clones;
 
     void Start()
     {
@@ -19,9 +19,9 @@ public class Log_Dropping : MonoBehaviour
 
         while (true)
         {
-            clone = Instantiate(log, spawnear.transform.position, spawnear.transform.rotation);
-            yield return new WaitForSeconds(3);
-            Destroy(clone, 15);
+            clones = Instantiate(logs, spawner.transform.position, spawner.transform.rotation);
+            yield return new WaitForSeconds(5);
+            Destroy(clones, 15);
         }
 
 

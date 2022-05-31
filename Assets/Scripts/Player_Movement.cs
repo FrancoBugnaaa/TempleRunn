@@ -7,8 +7,8 @@ public class Player_Movement : MonoBehaviour
     float movementspeed = 0.1f;
     float rotationspeed = 1;
     float jumpForce = 5;
-    int maxjumps = 5;
-
+    int maxjumps = 20;
+    public GameObject Boost;        
 
     int hasjump;
     Rigidbody rb;
@@ -60,9 +60,17 @@ public class Player_Movement : MonoBehaviour
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
             movementspeed += 0.05f;
-            maxjumps += 5;
         }
         if (col.gameObject.name == "Restart2")
+        {
+            transform.position = new Vector3(0.01f, 0.908f, -4.51f);
+        }
+        if(col.gameObject.name == "Boost")
+        {
+            jumpForce = jumpForce + 5;
+            Destroy(Boost);
+        }
+        if (col.gameObject.name == "Log")
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
