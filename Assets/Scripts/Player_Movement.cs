@@ -5,9 +5,10 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     float movementspeed = 0.1f;
-    float jumpForce = 5;
+    float jumpForce = 6;
     int maxjumps = 1;
     public GameObject Boost;
+    public GameObject Boost2;
     bool hasJump = true;
     Rigidbody rb;
 
@@ -56,7 +57,7 @@ public class Player_Movement : MonoBehaviour
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
-        if(col.gameObject.name == "Restart")
+        if (col.gameObject.name == "Restart")
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
             movementspeed += 0.05f;
@@ -65,15 +66,20 @@ public class Player_Movement : MonoBehaviour
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
-        if(col.gameObject.name == "Boost")
+        if (col.gameObject.name == "Boost")
         {
-            jumpForce = jumpForce + 5;
+            jumpForce = jumpForce + 2;
             Destroy(Boost);
         }
         if (col.gameObject.name == "Log(Clone)")
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
+        if (col.gameObject.name == "Boost2")
+        {
+            jumpForce = jumpForce - 2;
+            Destroy(Boost2);
+        }   
     }
 }
    
