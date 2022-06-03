@@ -17,12 +17,5 @@ public class Prefab_Code : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.name == "Player")
-        {
-            Player.transform.position = new Vector3(0.01f, 0.908f, -4.51f);
-        }
-    }
-}
+   }
 

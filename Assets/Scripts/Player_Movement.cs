@@ -5,18 +5,15 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     float movementspeed = 0.1f;
-    float rotationspeed = 1;
     float jumpForce = 5;
-    int maxjumps = 20;
-    public GameObject Boost;        
-
-    int hasjump;
+    int maxjumps = 1;
+    public GameObject Boost;
+    bool hasJump = true;
     Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        hasjump = maxjumps;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -31,26 +28,29 @@ public class Player_Movement : MonoBehaviour
         {
             transform.Translate(0, 0, -movementspeed);
         }
-        if (Input.GetKey(KeyCode.D) && hasjump == maxjumps)
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0, rotationspeed, 0);
+            transform.Translate(movementspeed, 0, 0);
         }
-        if (Input.GetKey(KeyCode.A) && hasjump == maxjumps)
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(0, -rotationspeed, 0);
+            transform.Translate(-movementspeed, 0, 0);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && hasjump > 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            hasjump--;
+            if (hasJump)
+            {
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                hasJump = false;
+            }
         }
     }
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "piso")
+        if (col.gameObject.name == "piso")
         {
-            hasjump = maxjumps;
+            hasJump = true;
         }
         if (col.gameObject.name == "DeathWall")
         {
@@ -70,7 +70,7 @@ public class Player_Movement : MonoBehaviour
             jumpForce = jumpForce + 5;
             Destroy(Boost);
         }
-        if (col.gameObject.name == "Log")
+        if (col.gameObject.name == "Log(Clone)")
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
