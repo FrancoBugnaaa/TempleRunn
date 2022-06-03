@@ -66,20 +66,28 @@ public class Player_Movement : MonoBehaviour
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
+        if (col.gameObject.name == "Log(Clone)")
+        {
+            transform.position = new Vector3(0.01f, 0.908f, -4.51f);
+        }
+        if(col.gameObject.name == "Bullet(Clone")
+        {
+            transform.position = new Vector3(0.01f, 0.908f, -4.51f);
+        }
+       
+    }
+    void OnTriggerEnter(Collider col)
+    {
         if (col.gameObject.name == "Boost")
         {
             jumpForce = jumpForce + 2;
             Destroy(Boost);
         }
-        if (col.gameObject.name == "Log(Clone)")
-        {
-            transform.position = new Vector3(0.01f, 0.908f, -4.51f);
-        }
         if (col.gameObject.name == "Boost2")
         {
             jumpForce = jumpForce - 2;
             Destroy(Boost2);
-        }   
+        }
     }
 }
    
