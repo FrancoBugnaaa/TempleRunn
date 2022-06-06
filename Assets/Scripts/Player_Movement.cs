@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -12,10 +13,16 @@ public class Player_Movement : MonoBehaviour
     bool hasJump = true;
     Rigidbody rb;
 
+    public Text gameOver;
+    public Text YouWon;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        YouWon.enabled = false;
+        gameOver.enabled = false;
     }
 
     // Update is called once per frame
@@ -45,6 +52,11 @@ public class Player_Movement : MonoBehaviour
                 hasJump = false;
             }
         }
+        if (LifeCounter.countervida <= 0)
+        {
+            transform.position = new Vector3(0.01f, 0.908f, -4.51f);
+            gameOver.enabled = true;
+        }
     }
 
     void OnCollisionEnter(Collision col)
@@ -56,11 +68,12 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.name == "DeathWall")
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
+            LifeCounter.countervida -= 100;
         }
         if (col.gameObject.name == "Restart")
         {
+            YouWon.enabled = true;
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
-            movementspeed += 0.05f;
         }
         if (col.gameObject.name == "Restart2")
         {
@@ -68,11 +81,13 @@ public class Player_Movement : MonoBehaviour
         }
         if (col.gameObject.name == "Log(Clone)")
         {
-            transform.position = new Vector3(0.01f, 0.908f, -4.51f);
+            transform.position = new Vector3(-0.1400001f, -12.04f, -47.93f);
+            LifeCounter.countervida -= 50;
         }
         if(col.gameObject.name == "Bullet(Clone)")
         {
-            transform.position = new Vector3(0.01f, 0.908f, -4.51f);
+            transform.position = new Vector3(-0.1400001f, -2.089999f, -23.42f);
+            LifeCounter.countervida -= 20;
         }
        
     }
