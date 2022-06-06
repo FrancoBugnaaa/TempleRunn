@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    float movementspeed = 0.1f;
-    float jumpForce = 6;
+    float movementspeed = 0.05f;
+    float jumpForce = 7;
     int maxjumps = 1;
     public GameObject Boost;
     public GameObject Boost2;
@@ -70,7 +70,7 @@ public class Player_Movement : MonoBehaviour
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
-        if(col.gameObject.name == "Bullet(Clone")
+        if(col.gameObject.name == "Bullet(Clone)")
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
@@ -85,7 +85,7 @@ public class Player_Movement : MonoBehaviour
         }
         if (col.gameObject.name == "Boost2")
         {
-            jumpForce = jumpForce - 2;
+            jumpForce = jumpForce - 4;
             Destroy(Boost2);
         }
     }
