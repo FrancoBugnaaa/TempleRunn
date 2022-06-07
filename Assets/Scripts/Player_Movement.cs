@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player_Movement : MonoBehaviour
 {
-    float movementspeed = 0.05f;
+    float movementspeed = 0.1f;
     float jumpForce = 7;
     int maxjumps = 1;
     public GameObject Boost;
@@ -15,6 +15,7 @@ public class Player_Movement : MonoBehaviour
 
     public Text gameOver;
     public Text YouWon;
+    public GameObject Retry;
 
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class Player_Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         YouWon.enabled = false;
         gameOver.enabled = false;
+        Retry.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,6 +58,7 @@ public class Player_Movement : MonoBehaviour
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
             gameOver.enabled = true;
+            Retry.gameObject.SetActive(true);
         }
     }
 
@@ -73,7 +76,8 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.name == "Restart")
         {
             YouWon.enabled = true;
-            transform.position = new Vector3(0.01f, 0.908f, -4.51f);
+            Retry.gameObject.SetActive(true);
+            //transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
         if (col.gameObject.name == "Restart2")
         {
@@ -81,7 +85,7 @@ public class Player_Movement : MonoBehaviour
         }
         if (col.gameObject.name == "Log(Clone)")
         {
-            transform.position = new Vector3(-0.1400001f, -12.04f, -47.93f);
+            transform.position = new Vector3(0.01f, 0.908f, -4.51f);
             LifeCounter.countervida -= 50;
         }
         if(col.gameObject.name == "Bullet(Clone)")
