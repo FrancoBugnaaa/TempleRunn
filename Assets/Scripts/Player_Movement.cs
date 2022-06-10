@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player_Movement : MonoBehaviour
 {
-    float movementspeed = 0.1f;
+    float movementspeed = 0.07f;
     float jumpForce = 7;
     int maxjumps = 1;
     public GameObject Boost;
