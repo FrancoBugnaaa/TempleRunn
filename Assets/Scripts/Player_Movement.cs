@@ -90,7 +90,7 @@ public class Player_Movement : MonoBehaviour
         }
         if(col.gameObject.name == "Bullet(Clone)")
         {
-            transform.position = new Vector3(-0.1400001f, -2.089999f, -23.42f);
+            transform.position = new Vector3(0.01f, 0.908f, -4.51f);
             LifeCounter.countervida -= 20;
         }
        
