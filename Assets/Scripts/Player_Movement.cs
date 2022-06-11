@@ -30,28 +30,31 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if(Time.timeScale == 1)
         {
-            transform.Translate(0, 0, movementspeed);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(0, 0, -movementspeed);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(movementspeed, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(-movementspeed, 0, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (hasJump)
+            if (Input.GetKey(KeyCode.W))
             {
-                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                hasJump = false;
+                transform.Translate(0, 0, movementspeed);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.Translate(0, 0, -movementspeed);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(movementspeed, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(-movementspeed, 0, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (hasJump)
+                {
+                    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                    hasJump = false;
+                }
             }
         }
         if (LifeCounter.countervida <= 0)
@@ -77,6 +80,7 @@ public class Player_Movement : MonoBehaviour
         {
             YouWon.enabled = true;
             Retry.gameObject.SetActive(true);
+            Time.timeScale = 0;
             //transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
         if (col.gameObject.name == "Restart2")
