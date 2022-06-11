@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float elapsedTime = Time.time;
+        float elapsedTime = Time.timeSinceLevelLoad;
         txtTimeFloored.text = Mathf.Floor(elapsedTime).ToString();
        if(LifeCounter.countervida == 0)
         {
