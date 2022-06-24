@@ -20,6 +20,7 @@ public class Log_Dropping : MonoBehaviour
         while (true)
         {
             clones = Instantiate(logs, spawner.transform.position, spawner.transform.rotation);
+            clones.transform.Rotate(90, 0, 0);
             yield return new WaitForSeconds(5);
             Destroy(clones, 15);
         }
