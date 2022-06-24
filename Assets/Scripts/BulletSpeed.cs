@@ -8,6 +8,6 @@ public class BulletSpeed : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime, 0, 0);
+        transform.Translate(speed * 0, 0, Time.deltaTime);
     }
 }
