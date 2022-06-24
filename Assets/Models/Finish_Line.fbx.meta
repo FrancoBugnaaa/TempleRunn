@@ -1,42 +1,61 @@
 fileFormatVersion: 2
-guid: d599b91288e339b47a08c673013b642f
+guid: 57fe46bccbddfea4ab883a8bb6c30d00
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Camera
-    100002: Cube
-    100004: Cube.001
-    100006: Cylinder
-    100008: Cylinder.001
-    100010: //RootNode
-    100012: Light
-    400000: Camera
-    400002: Cube
-    400004: Cube.001
-    400006: Cylinder
-    400008: Cylinder.001
-    400010: //RootNode
-    400012: Light
-    2000000: Camera
+    100000: Cube
+    100002: Cube.001
+    100004: Cylinder.001
+    100006: Cylinder.002
+    100008: //RootNode
+    400000: Cube
+    400002: Cube.001
+    400004: Cylinder.001
+    400006: Cylinder.002
+    400008: //RootNode
     2100000: Material
-    2100002: Material.002
-    2100004: Material.005
-    2100006: Material.006
+    2100002: Material.001
+    2100004: Material.003
+    2100006: Material.004
     2300000: Cube
     2300002: Cube.001
-    2300004: Cylinder
-    2300006: Cylinder.001
+    2300004: Cylinder.001
+    2300006: Cylinder.002
     3300000: Cube
     3300002: Cube.001
-    3300004: Cylinder
-    3300006: Cylinder.001
+    3300004: Cylinder.001
+    3300006: Cylinder.002
     4300000: Cube
-    4300002: Cylinder
-    4300004: Cube.001
-    4300006: Cylinder.001
-    10800000: Light
+    4300002: Cylinder.001
+    4300004: Cylinder.002
+    4300006: Cube.001
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: eeefa342562ba724dbdc697b68e42538, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 2e3d9e895159dea4ab87fca0727ae789, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: c12c2b0466f06da4f91a2e13c3d18ad5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 55d3d5a131a0f1c42b9a9240754c28fa, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: lH8yTHvm
+    second: {fileID: 2800000, guid: d87dd8bd31982d54583ce5d993f8a533, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

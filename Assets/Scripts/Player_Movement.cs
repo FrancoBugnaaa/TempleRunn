@@ -121,7 +121,7 @@ public class Player_Movement : MonoBehaviour
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
-        if (col.gameObject.name == "Log(Clone)")
+        if (col.gameObject.name == "Tronco(Clone)")
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
             LifeCounter.countervida -= 50;

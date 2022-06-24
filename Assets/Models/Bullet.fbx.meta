@@ -1,21 +1,14 @@
 fileFormatVersion: 2
-guid: d8ff06e8f2db5b840afd191e58072e2b
+guid: 8b12e1c6dbc783f40a90a1819a62b6b7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Camera
-    100004: Cylinder
-    100006: Cylinder.001
-    100008: Light
-    100010: Light.001
+    100002: Cylinder
+    100004: Cylinder.001
     400000: //RootNode
-    400002: Camera
-    400004: Cylinder
-    400006: Cylinder.001
-    400008: Light
-    400010: Light.001
-    2000000: Camera
+    400002: Cylinder
+    400004: Cylinder.001
     2100000: Material.001
     2100002: Material.002
     2300000: Cylinder
@@ -24,9 +17,22 @@ ModelImporter:
     3300002: Cylinder.001
     4300000: Cylinder
     4300002: Cylinder.001
-    10800000: Light
-    10800002: Light.001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: b930436230895c2479234cd77a36905c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 9b26fe61377ccf74696122f420a9e0dc, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: paleta metalica
+    second: {fileID: 2800000, guid: 161de716c82938d4a80cab8ecea7882c, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
