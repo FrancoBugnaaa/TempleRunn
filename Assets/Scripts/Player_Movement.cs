@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player_Movement : MonoBehaviour
 {
-    float movementspeed = 0.07f;
+    float movementspeed = 0.1f;
     float jumpForce = 7;
     int maxjumps = 1;
     public GameObject Boost;
@@ -16,6 +16,7 @@ public class Player_Movement : MonoBehaviour
     public Text gameOver;
     public Text YouWon;
     public GameObject Retry;
+    public GameObject aja;
 
 
     // Start is called before the first frame update
@@ -30,7 +31,34 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.timeScale == 1)
+        //if(Time.timeScale == 1)
+        //{
+        //    if (Input.GetKey(KeyCode.W))
+        //    {
+        //        transform.Translate(0, 0, movementspeed);
+        //    }
+        //    if (Input.GetKey(KeyCode.S))
+        //    {
+        //        transform.Translate(0, 0, -movementspeed);
+        //    }
+        //    if (Input.GetKey(KeyCode.D))
+        //    {
+        //        transform.Translate(movementspeed, 0, 0);
+        //    }
+        //    if (Input.GetKey(KeyCode.A))
+        //    {
+        //        transform.Translate(-movementspeed, 0, 0);
+        //    }
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
+        //        if (hasJump)
+        //        {
+        //            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        //            hasJump = false;
+        //        }
+        //    }
+        //}
+        if (Time.timeScale == 1)
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -57,6 +85,7 @@ public class Player_Movement : MonoBehaviour
                 }
             }
         }
+
         if (LifeCounter.countervida <= 0)
         {
             transform.position = new Vector3(0.01f, 0.908f, -4.51f);
@@ -81,6 +110,11 @@ public class Player_Movement : MonoBehaviour
             YouWon.enabled = true;
             Retry.gameObject.SetActive(true);
             Time.timeScale = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                Instantiate(aja);
+            }
+            
             //transform.position = new Vector3(0.01f, 0.908f, -4.51f);
         }
         if (col.gameObject.name == "Restart2")
